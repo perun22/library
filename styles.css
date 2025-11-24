@@ -94,7 +94,6 @@ body {
 h1 {
     font-size: 3.3rem;
     font-family: 'tan-pearl';
-    margin-left: 20px;
     margin-top: 12px;
     color: #284c4c;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -136,12 +135,31 @@ a:hover {
     flex-direction: column;
     width: 60vw;
     background-color: #848c8d;
+    align-items: center;
+    gap: 20px;
 }
 
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 50px;
+    padding: 30px 50px;
+    gap: 20px;
 }
+
+.btn {
+    color: #a6b7b9;
+    background-color: #284c4c;
+    padding: 8px 32px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+.btn:hover {
+    background-color: #193636;
+}
+
 

@@ -1,0 +1,147 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: "Norse-bold";
+    src:
+        local("Norse-bold.otf"),
+        url("Norse-bold.otf") format("opentype");
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+@font-face {
+    font-family: "Tan-pearl";
+    src:
+        local("tan-pearl.otf"),
+        url("tan-pearl.otf") format("opentype");
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.3rem;
+    font-family: 'tan-pearl';
+    margin-left: 20px;
+    margin-top: 12px;
+    color: #284c4c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.left {
+    background-image: url(Library.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+}
+.overlay {
+    border-image: fill 1 radial-gradient(circle, rgba(189, 185, 185, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.credit {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+a:hover {
+    color: #daa520;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    background-color: #848c8d;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px;
+}
+

@@ -1,7 +1,7 @@
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+  */
 
 *,
 *::before,
@@ -82,36 +82,44 @@ h6 {
 }
 
 body {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content"
+        "sidebar footer";
+    background-color: #b1b9ba;
 }
 .container {
-    display: flex;
+    grid-area: content;
     min-height: 100vh;
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
 }
 
 h1 {
     font-size: 3.3rem;
-    font-family: 'tan-pearl';
+    font-family: "tan-pearl";
     margin-top: 12px;
     color: #284c4c;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.left {
+.sidebar {
     background-image: url(Library.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40vw;
+    grid-area: sidebar;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 20px;
     filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
 }
 .overlay {
-    border-image: fill 1 radial-gradient(circle, rgba(189, 185, 185, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border-image: fill 1 radial-gradient(circle, rgba(189, 185, 185, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .credit {
@@ -119,7 +127,7 @@ h1 {
     font-family: sans-serif;
     font-size: 14px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 a {
@@ -130,25 +138,25 @@ a:hover {
     color: #daa520;
 }
 
-.right {
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
-    background-color: #848c8d;
-    align-items: center;
-    gap: 20px;
-}
-
-.header {
+header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 50px;
+    padding: 24px 0;
     gap: 20px;
+    border-bottom: 1px solid rgba(40, 76, 76, 0.5);
+}
+.btn-field {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
 }
 
 .btn {
-    color: #a6b7b9;
+    color: #b1b9ba;
     background-color: #284c4c;
     padding: 8px 32px;
     border: none;
@@ -162,4 +170,137 @@ a:hover {
     background-color: #193636;
 }
 
+.book-container {
+    border: 1px solid rgba(40, 76, 76, 0.5);
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px #284c4c;
+    min-width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    position: relative;
+}
 
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #193636;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+.book-title {
+    font-family: "tan-pearl";
+    font-size: 18px;
+}
+
+.book-author {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+}
+.book-pages,
+.book-status {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+}
+
+.card-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-btn {
+    color: #b1b9ba;
+    background-color: rgb(40, 76, 76);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+.card-btn:hover {
+    background-color: #193636;
+    color: #d8e2e3;
+}
+footer {
+    grid-area: footer;
+    text-align: center;
+    color: #193636;
+    padding: 12px 0;
+    border-top: 1px solid rgba(40, 76, 76, 0.5);
+}
+footer a {
+    color: #193636;
+}
+
+footer a:hover {
+    color: #386e6e;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+}
+input {
+    background-color: #b1b9ba;
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+    box-shadow: 0 0 5px rgb(6, 23, 23);
+}
+
+dialog {
+    margin: auto;
+    border: none;
+    border-radius: 8px;
+    background-color: #284c4c;
+    box-shadow: 0 0 8px rgb(6, 23, 23);
+    color: #d8e2e3;
+    min-width: 30vw;
+}
+dialog::backdrop {
+    background: radial-gradient(circle, rgba(40, 76, 76, 0.3) 0%, rgba(6, 23, 23, 0.6) 0%, rgba(6, 23, 23, 0.8) 100%);
+}
+
+.close-btn {
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 8px;
+    color: #d8e2e3;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgb(6, 23, 23);
+}
+
+.submit-btn {
+    background-color: rgb(10, 43, 43);
+    color: #d8e2e3;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    padding: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgb(6, 23, 23);
+}
+
+.submit-btn:hover {
+    background-color: rgb(5, 30, 30);
+}
+
+.radio-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

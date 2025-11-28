@@ -3,6 +3,10 @@ const openBtn = document.getElementById("modal-btn-open");
 const closeBtn = document.getElementById("close-btn");
 const modalForm = document.getElementById("modal-form");
 const submitBtn = document.getElementById("submit");
+const title = document.getElementById("title").value;
+const author = document.getElementById("author").value;
+const pages = document.getElementById("pages").value;
+
 
 openBtn.addEventListener("click", () => {
     bookDialog.showModal();
@@ -33,14 +37,24 @@ function Book(title, author, pages, readStatus) {
 }
 const myLibrary = [];
 
-function addBookToLibrary() {}
+function addBookToLibrary() {
+    const userData = new Book(title, author, pages, readStatus);
+    myLibrary.push(userData);
 
-function getFormData(event) {
-    const userData = new FormData(event.target);
-    const bookData = {};
-    userData.forEach((value, key) => (bookData[key] = value));
-    event.preventDefault();
-    bookDialog.close();
-    console.log(myLibrary);
+    console.log(title);
+    console.log(author);
+    console.log(pages);
+    console.log(readStatus);
 }
-modalForm.addEventListener("submit", getFormData);
+
+submitBtn.addEventListener("click", addBookToLibrary);
+
+//function getFormData(event) {
+//    const userData = new FormData(event.target);
+//    const bookData = {};
+//    userData.forEach((value, key) => (bookData[key] = value));
+//    event.preventDefault();
+//    bookDialog.close();
+//    console.log(myLibrary);
+//}
+//modalForm.addEventListener("submit", getFormData);

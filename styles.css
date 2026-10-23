@@ -22,6 +22,8 @@
 body {
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
+    height: 100%;
+    min-height: 100vh;
 }
 
 @font-face {
@@ -88,16 +90,19 @@ body {
         "sidebar header"
         "sidebar content"
         "sidebar footer";
-    background-color: #b1b9ba;
+    background-color: hsl(187, 6%, 91%);
+    /*row-gap: 180px;*/
+    min-height: 100vh;
 }
 .container {
     grid-area: content;
-    min-height: 100vh;
-    margin: 24px;
+    /*margin: 24px;*/
     display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: center;
+    justify-content: stretch;
+    min-height: 100vh;
 }
 
 h1 {
@@ -112,6 +117,7 @@ h1 {
     background-image: url(Library.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
     grid-area: sidebar;
     display: flex;
     justify-content: center;
@@ -153,6 +159,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 24px;
+    padding-top: 25px;
 }
 
 .btn {
@@ -179,7 +186,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 24px;
-    position: relative;
+    /*position: relative;*/
 }
 
 .card {
@@ -251,7 +258,7 @@ form {
     font-size: 0.9rem;
 }
 input {
-    background-color: #b1b9ba;
+    background-color: #e9f0f1;
     border-radius: 4px;
     border: none;
     padding: 8px;
@@ -264,7 +271,7 @@ dialog {
     border-radius: 8px;
     background-color: #284c4c;
     box-shadow: 0 0 8px rgb(6, 23, 23);
-    color: #d8e2e3;
+    color: #e9f0f1;
     min-width: 30vw;
     padding: 36px;
 }

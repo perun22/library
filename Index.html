@@ -42,34 +42,31 @@
                             <p>Have you read the book?</p>
                             <div>
                                 <label for="readStatus"></label>
-                                <input type="checkbox" id="readStatus" name="readStatus" value="read" />
+                                <input type="checkbox" id="readStatus" name="readStatus" />
                             </div>
                         </div>
                         <button type="submit" class="submit-btn" id="submit">Submit</button>
                     </form>
                 </dialog>
             </section>
+            <ul id="book-list"></ul>
             <template id="book-card">
-                <div class="book-container">
-                    <ul class="card">
-                        <li>
-                            <h3 class="book-title"></h3>
-                        </li>
-                        <li>
-                            <p class="book-author"></p>
-                        </li>
-                        <li>
-                            <p class="book-pages"></p>
-                        </li>
-                        <li>
-                            <p class="book-status"></p>
-                        </li>
-                    </ul>
-                    <div class="card-btns">
-                        <button id="btn-remove" class="card-btn">Remove</button>
-                        <button id="btn-status" class="card-btn">Change Status</button>
-                    </div>
-                </div>
+                <ul class="card book-container">
+                    <li>
+                        <h3 class="book-title" data-book-item-title></h3>
+                    </li>
+                    <li>
+                        <p class="book-author" data-book-item-author></p>
+                    </li>
+                    <li>
+                        <p class="book-pages" data-book-item-pages></p>
+                    </li>
+                    <li>
+                        <p class="book-status" data-book-item-status></p>
+                    </li>
+                    <li><button id="btn-remove" class="card-btn" data-button-delete>Remove</button></li>
+                    <li><button id="btn-status" class="card-btn" data-button-status>Change Status</button></li>
+                </ul>
             </template>
         </main>
         <aside class="sidebar">

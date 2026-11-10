@@ -39,35 +39,35 @@
                         <label for="pages">Number of Pages</label>
                         <input type="number" id="pages" name="pages" required />
                         <div class="radio-btns">
-                            <p>Have you read the book?</p>
-                            <div>
-                                <label for="readStatus"></label>
-                                <input type="checkbox" id="readStatus" name="readStatus" />
-                            </div>
+                            Have you read the book?
+                            <label for="readStatus"></label>
+                            <input type="checkbox" id="readStatus" name="readStatus" />
                         </div>
                         <button type="submit" class="submit-btn" id="submit">Submit</button>
                     </form>
                 </dialog>
             </section>
-            <ul id="book-list"></ul>
-            <template id="book-card">
-                <ul class="card book-container">
-                    <li>
-                        <h3 class="book-title" data-book-item-title></h3>
-                    </li>
-                    <li>
-                        <p class="book-author" data-book-item-author></p>
-                    </li>
-                    <li>
-                        <p class="book-pages" data-book-item-pages></p>
-                    </li>
-                    <li>
-                        <p class="book-status" data-book-item-status></p>
-                    </li>
-                    <li><button id="btn-remove" class="card-btn" data-button-delete>Remove</button></li>
-                    <li><button id="btn-status" class="card-btn" data-button-status>Change Status</button></li>
-                </ul>
-            </template>
+            <section>
+                <ul id="book-list" class="book-list"></ul>
+                <template id="book-card">
+                    <ul class="card book-container">
+                        <li>
+                            <h3 class="book-title" data-book-item-title></h3>
+                        </li>
+                        <li>
+                            <p class="book-author" data-book-item-author></p>
+                        </li>
+                        <li class="span-styles">
+                            <span class="book-pages" data-book-item-pages></span>
+                            <span class="book-status" data-book-item-status></span>
+                        </li>
+                        <li class="span-styles">
+                            <button id="btn-remove" class="card-btn" data-button-delete>Remove</button>
+                            <button id="btn-status" class="card-btn" data-button-status>Change Status</button>
+                        </li>
+                    </ul>
+                </template>
+            </section>
         </main>
         <aside class="sidebar">
             <div class="overlay">
